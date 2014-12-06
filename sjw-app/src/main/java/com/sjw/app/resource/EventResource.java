@@ -33,12 +33,12 @@ public class EventResource {
         return new ResponseEntity<>(events.findAll(), OK);
     }
 
-    @RequestMapping(value = "/{orgId}", method = GET)
+    @RequestMapping(method = GET, params="orgId")
     public ResponseEntity<List<Event>> findByOrgId(@RequestParam Long orgId) {
         return new ResponseEntity<>(events.findByOrg_Id(orgId), OK);
     }
 
-    @RequestMapping(value = "/{eventType}", method = GET)
+    @RequestMapping(method = GET, params="type")
     public ResponseEntity<List<Event>> findByEventType(@RequestParam EventType type) {
         return new ResponseEntity<>(events.findByEtype(type), OK);
     }
