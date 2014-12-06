@@ -1,5 +1,7 @@
 package com.sjw.app.resource;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +23,11 @@ public class OrganizationResource {
     private OrganizationService orgs;
 
     @RequestMapping(method = GET)
+    public ResponseEntity<List<Organization>> query() {
+        return new ResponseEntity<>(orgs.findAll(), OK);
+    }
+
+    @RequestMapping(value = "/{id}", method = GET)
     public ResponseEntity<Organization> findOne(@RequestParam Long id) {
         return new ResponseEntity<>(orgs.findOne(id), OK);
     }
