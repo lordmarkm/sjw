@@ -27,6 +27,40 @@ public class Event extends BaseNamedEntity {
 	
 	@Column
 	private float longtitude = 0.0f;
+
+	public EventType getEtype() {
+		return etype;
+	}
+
+	public void setEtype(EventType etype) {
+		this.etype = etype;
+	}
+
+	public Organization getOrg() {
+		return org;
+	}
+
+	public void setOrg(Organization org) {
+		this.org = org;
+	}
+
+	public float getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(float latitude) {
+		this.latitude = latitude;
+	}
+
+	public float getLongtitude() {
+		return longtitude;
+	}
+
+	public void setLongtitude(float longtitude) {
+		this.longtitude = longtitude;
+	}
+	
+	
 	
 	
 }
